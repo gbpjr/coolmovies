@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
-import SearchAppBar from '../../src/shared/components/AppBar'
+import AppBar from '../../src/shared/components/AppBar'
 
 const Reviews: NextPage = () => {
   return (
     <>
-     <SearchAppBar/>
+     <AppBar/>
     </>
   )
 }
