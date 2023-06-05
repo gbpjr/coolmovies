@@ -7,6 +7,9 @@ import { createStore } from '../redux';
 import { EnhancedStore } from '@reduxjs/toolkit';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { MainTheme } from '../src/shared/themes/main';
+
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const [store, setStore] = useState<EnhancedStore | null>(null);
   React.useEffect(() => {
@@ -27,9 +30,11 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
-      <ReduxProvider store={store}>
-        <Component {...pageProps} />
-      </ReduxProvider>
+      <ThemeProvider theme={MainTheme}>
+        <ReduxProvider store={store}>
+          <Component {...pageProps} />
+        </ReduxProvider>
+      </ThemeProvider>
     </>
   );
 };
