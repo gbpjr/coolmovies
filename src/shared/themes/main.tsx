@@ -3,10 +3,10 @@ import { createTheme } from '@mui/material/styles'
 const MainTheme = createTheme({
   palette: {
     primary: {
-      main: '#166B39',
+      main: '#FFFFFF',
       dark: '#EE5026',
       light: '#FEAC28',
-      contrastText: '#FFFFFF'
+      contrastText: '#333333'
     },
     secondary: {
       main: '#2B3743',
@@ -19,6 +19,28 @@ const MainTheme = createTheme({
       paper: '#FFFFFF'
     }
   },
+  typography: {
+    fontFamily: [
+      'Work Sans',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
+  components: {
+    MuiTypography: {
+        styleOverrides: {
+            root: {
+                wordWrap: "break-word"
+            },
+        },
+  }}
 })
 
 export { MainTheme }
